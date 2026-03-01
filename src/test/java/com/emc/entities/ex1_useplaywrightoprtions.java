@@ -1,3 +1,4 @@
+package com.emc.entities;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.junit.UsePlaywright;
 

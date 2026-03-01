@@ -1,6 +1,9 @@
+package com.emc.entities;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.AfterAll;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,15 +13,15 @@ import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-
-
-public class ex4_letcode {
-    private static Playwright playwright;
+// Use @TestInstance(TestInstance.Lifecycle.PER_CLASS) to use non-static @BeforeAll
+public class ex2_browser_context {
+     private static Playwright playwright;
     private static Browser browser;
     private static BrowserContext browserContext;
 
     Page page;
-   @BeforeAll
+
+    @BeforeAll
     public static void setUpBrowser() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(
@@ -41,16 +44,23 @@ public class ex4_letcode {
         playwright.close();
     }
 
-@Test
-public void letcodedemo(){
-page.navigate("https://letcode.in/test");
-page.locator("a[href='/home']").click();
-System.out.println(page.title());
-System.out.println(page.getByText("Fjallraven - Foldsack No. 1 Ba...").textContent());
-System.out.println(page.locator("//section/div/div[2]/div[3]").textContent());
-for (int i=1; i<5; i++){
-    System.out.println(page.locator("//section/div/div[2]/div["+i+"]").textContent());
-    
-}
-}
+    @Test
+    void shouldShowThePageTitle() {
+        page.navigate("https://practicesoftwaretesting.com");
+        String title = page.title();
+        Assertions.assertTrue(title.contains("Practice Software Testing"));
+    }
+
+    @Test
+    void shouldShowSearchTermsInTheTitle() {
+        page.navigate("https://practicesoftwaretesting.com");
+        System.out.println("NODE PATH: " + System.getenv("PLAYWRIGHT_NODEJS_PATH"));
+        System.out.println("Skip Download active: " + System.getenv("PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD"));
+        page.locator("[placeholder=Search]").fill("Pliers");
+        page.locator("button:has-text('Search')").click();
+
+        int matchingProductCount = page.locator(".card-title").count();
+
+        Assertions.assertTrue(matchingProductCount > 0);
+    }
 }

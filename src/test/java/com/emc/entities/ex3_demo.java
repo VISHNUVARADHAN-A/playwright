@@ -1,3 +1,4 @@
+package com.emc.entities;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
