@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite [
+        <!ELEMENT suite (test)*>
+        <!ATTLIST suite
+                name CDATA #REQUIRED>
+        <!ELEMENT test (classes)*>
+        <!ATTLIST test
+                name CDATA #REQUIRED>
+        <!ELEMENT classes (class)*>
+        <!ELEMENT class (#PCDATA)>
+        <!ATTLIST class
+                name CDATA #REQUIRED>
+        ]>
+<suite name="MyTestSuite">
+    <test name="MyTest">
+        <classes>
+            <class name="test.test2">
+            <methods>
+    <include name ="runner"/>
+        </methods>
+        </class>
+
+        </classes>
+    </test>
+    <test name="mytest2">
+        <classes>
+            <class name="test.test1">
+                <methods>
+                    <include name="priorityRunner"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

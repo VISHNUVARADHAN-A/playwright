@@ -1,0 +1,10 @@
+{
+    "java.test.config": [
+        {
+            "name": "testng",
+            "workingDirectory": "${workspaceFolder}",
+            "args": [ "-suitename", "Suite", "testng.xml" ]
+        }
+    ],
+    "java.test.defaultConfig": "testng"
+}

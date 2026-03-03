@@ -8,11 +8,7 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-
+import org.testng.annotations.*;
 import org.testng.annotations.Test;
 
 public class test2 {
@@ -25,6 +21,15 @@ public class test2 {
     Playwright playwright;
     Browser browser;
     Page page;
+    @BeforeTest
+    void beforetest(){
+    log("beforetest");
+    }
+    @AfterTest
+    void aftertest(){
+        log("aftertest");
+    }
+
 @BeforeClass
 void BeforeClass(){
     log("before class");
@@ -52,6 +57,12 @@ void AfterClass(){
     void runner() {
         log("start up1");
         page.navigate("https://seleniumbase.io/demo_page");
+    }
+
+    @Test(priority = 3, enabled = false)
+    void diabledrunner() {
+        log("diabledrunner");
+        page.navigate("https://google.com");
     }
 
     @AfterMethod

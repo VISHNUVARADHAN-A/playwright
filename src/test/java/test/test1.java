@@ -8,11 +8,7 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-
+import org.testng.annotations.*;
 import org.testng.annotations.Test;
 
 public class test1 {
@@ -25,6 +21,16 @@ public class test1 {
     Playwright playwright;
     Browser browser;
     Page page;
+
+    @BeforeSuite
+    void beforesuitstart(){
+        log("beforesuitstart");
+    }
+    @AfterSuite
+    void aftersuitend(){
+        log("aftersuitend");
+    }
+
 @BeforeClass
 void BeforeClass(){
     log("before class");
@@ -55,7 +61,7 @@ void AfterClass(){
     }
 
     @AfterMethod
-    void tearup() {
+    void enddown() {
         log("wrapup");
         if (browser != null) {
             browser.close();
