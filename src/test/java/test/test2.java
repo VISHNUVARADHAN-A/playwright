@@ -21,23 +21,27 @@ public class test2 {
     Playwright playwright;
     Browser browser;
     Page page;
+
     @BeforeTest
-    void beforetest(){
-    log("beforetest");
+    void beforetest() {
+        log("beforetest");
     }
+
     @AfterTest
-    void aftertest(){
+    void aftertest() {
         log("aftertest");
     }
 
-@BeforeClass
-void BeforeClass(){
-    log("before class");
-}
-@AfterClass
-void AfterClass(){
-    log("After class");
-}
+    @BeforeClass
+    void BeforeClass() {
+        log("before class");
+    }
+
+    @AfterClass
+    void AfterClass() {
+        log("After class");
+    }
+
     @BeforeMethod
     void startup() {
         log("startup");

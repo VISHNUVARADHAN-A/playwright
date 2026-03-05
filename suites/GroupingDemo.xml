@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="MyTestSuite">
+    <test name="MyTest">
+
+              <groups>
+                  <run>
+                  <include name="regression"/></run>
+              </groups>
+        <classes>
+            <class name="test.groupingDemo"/>
+        </classes>
+
+
+
+    </test>
+    <test name="MyTest2">
+
+                <groups>
+                   <run> <include name="sanity"/></run>
+                </groups>
+        <classes>
+            <class name="test.groupingDemo"/>
+        </classes>
+    </test>
+    <test name="MyTest1">
+                <groups>
+                    <run><include name="smoke"/>
+                        <include name="regression"/>
+                    </run>
+                </groups>
+        <classes>
+            <class name="test.groupingDemo"/>
+        </classes>
+    </test>
+    <test name="MyTest3">
+        <groups>
+            <run><exclude name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="test.groupingDemo"/>
+        </classes>
+    </test>
+</suite>

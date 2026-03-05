@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="MyTestSuite">
+    <test name="MyTest">
+        <classes>
+            <class name="test.Testng.test2">
+                <methods>
+                    <include name="runner"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+    <test name="mytest2">
+        <classes>
+            <class name="test.test1">
+                <methods>
+                    <include name="priorityRunner"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

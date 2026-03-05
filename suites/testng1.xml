@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="MyTestSuite">
+    <test name="MyTest">
+        <classes>
+            <class name="test.dependsOnDemo">
+                <methods>
+                    <include name="runner"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

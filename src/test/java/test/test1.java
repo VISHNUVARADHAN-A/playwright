@@ -31,14 +31,14 @@ public class test1 {
         log("aftersuitend");
     }
 
-@BeforeClass
-void BeforeClass(){
-    log("before class");
-}
-@AfterClass
-void AfterClass(){
-    log("After class");
-}
+    @BeforeClass
+    void BeforeClass(){
+        log("before class");
+    }
+    @AfterClass
+    void AfterClass(){
+        log("After class");
+    }
     @BeforeMethod
     void startup() {
         log("startup");
@@ -49,7 +49,7 @@ void AfterClass(){
     }
 
     @Test(priority = 0)
-   public void priorityRunner() {
+    public void priorityRunner() {
         log("start up0");
         page.navigate("https://letcode.in/test");
     }
