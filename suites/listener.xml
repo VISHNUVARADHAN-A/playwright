@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="MyTestSuite">
+    <listeners>
+        <listener class-name="ListenerTest.listenerTest">
+        </listener>
+    </listeners>
+    <test name="MyTest">
+        <classes>
+            <class name="test.ListenerDemowithXML">
+                <methods>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
