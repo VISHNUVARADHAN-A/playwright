@@ -5,8 +5,10 @@ public class MainPage {
     private static final  String BASE_URL = "https://letcode.in/test";
 
     public MainPage(Page page) {
+
         this.page = page;
     }
+
     public void goToMainPage() {
         page.navigate(BASE_URL);
     }
